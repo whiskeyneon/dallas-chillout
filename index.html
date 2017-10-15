@@ -2,51 +2,43 @@
 <html>
 <head>
     <title>Dallas Chillout</title>
-    <style type="text/css">
-	hml, body, div, canvas {
-		margin: 0;
-		padding: 0;
-	}
-    html { 
-		border: 0px !important;
-		background: url(bg.jpg) no-repeat center center fixed; 
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		overflow: hidden;
-	}
-	audio { 
-		display:none;
-	}
-	#sky {
-	width: 100%; 
-	height: 100%; 
-	position: absolute; 
-	left: 0px; 
-	top: 0px;
-	}
-	#canvas {
-		position: relative;
-	}
-	#background {
-		width: 100%; 
-		height: 100%; 
-		position: absolute; 
-		left: 0px; 
-		top: 0px; 
-		background: url(front.png);
-		background-size: cover;
-	}
-	</style>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+    <link rel="stylesheet" href="css/reboot.css">
+    <link rel="stylesheet" href="css/chillout.css">
+
+    <script async src="js/visualizer.js"></script>
+    <script async src="js/mixer.js"></script>
 </head>
 <body>
-	<iframe id="sky" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://virtualsky.lco.global/embed/?longitude=-96.8089&latitude=32.7753&projection=stereo&keyboard=false&cardinalpoints=false&showposition=false&live=true&az=181.25&showdate=false" allowTransparency="true"></iframe>
-	<canvas id='canvas'></canvas>
-	<audio controls="0" autoplay="1"><source src="http://relay.broadcastify.com/vsg368wkmh7p?nocache=6549361&xan=932"></audio> 
-	<audio controls="0" autoplay="1"><source src="http://relay.broadcastify.com/269326072?nocache=6549361&xan=825"></audio>
-	<audio controls="0" autoplay="1"><source src="http://ice2.somafm.com/defcon-256-mp3"></audio>
-	<script src="js/index.js"></script>
-	<div id="background"></div>
+  <iframe id="virtualsky" src="http://virtualsky.lco.global/embed/?longitude=-96.8089&amp;latitude=32.7753&amp;projection=stereo&amp;keyboard=false&amp;cardinalpoints=false&amp;showposition=false&amp;live=true&amp;az=181.25&amp;showdate=false"></iframe>
+
+  <canvas id='visualizer'></canvas>
+
+  <div id="controls">
+    <a id="mixer-toggle"></a>
+    <div id="mixer">
+      <header>Stream Volume</header>
+    </div>
+  </div>
+
+  <audio class="audio-stream" autoplay
+    data-stream-name="Collin Police, Fire &amp; EMS"
+    data-stream-source="https://www.broadcastify.com/listen/feed/22147"
+    data-stream-type="voice"
+    src="http://relay.broadcastify.com/vsg368wkmh7p?nocache=6549361&amp;xan=932"></audio>
+
+  <audio class="audio-stream" autoplay
+    data-stream-name="Dallas Police Central &amp; NE"
+    data-stream-source="https://www.broadcastify.com/listen/feed/5318"
+    data-stream-type="voice"
+    src="http://relay.broadcastify.com/269326072?nocache=6549361&amp;xan=825"></audio>
+
+  <audio class="audio-stream" autoplay
+    data-stream-name="DEF CON Radio"
+    data-stream-source="https://somafm.com/defcon"
+    data-stream-type="music"
+    src="http://ice2.somafm.com/defcon-256-mp3"></audio>
 </body>
 </html>

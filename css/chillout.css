@@ -1,0 +1,99 @@
+html, body {
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #000;
+}
+
+html::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  content: '';
+  background-image: url('../images/skyline.png');
+  background-size: cover;
+}
+
+audio {
+  display: none;
+}
+
+#virtualsky {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+#visualizer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#controls {
+  position: absolute;
+  display: flex;
+  z-index: 100;
+
+  padding: 15px;
+  opacity: 0.4;
+}
+
+#mixer,
+#mixer-toggle {
+  margin: 10px;
+}
+
+#mixer-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+
+  background-color: #000;
+  background-image: url('../images/mixer-toggle.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#mixer {
+  display: none;
+
+  padding-top: 3px;
+  padding-right: 15px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+
+  border-radius: 5px;
+
+  color: #fff;
+
+  background-color: #000;
+}
+
+#mixer header {
+  margin-bottom: 5px;
+  border-bottom: 1px solid #555;
+}
+
+#mixer .stream {
+  display: flex;
+
+  font-size: 10px;
+}
+
+#mixer .stream > * {
+  margin: 5px;
+  flex-basis: 200px;
+}
